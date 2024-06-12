@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="Zh_CN">
+<head>
+    <title>《国际版抖音教程！》</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="referrer" content="no-referrer"/>
+    <link rel="dns-prefetch" href="https://i0.hdslb.com">
+    <link rel="dns-prefetch" href="https://article.biliimg.com">
+    <script src="https://vuemin.oss-cn-shanghai.aliyuncs.com/vue.min.js"></script>
+    <style>
+        body {
+            background-color: #fff;
+            text-align: center;
+        }
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .fullscreen {
+            display: block;
+            width: 100%;
+            margin: auto;
+        }
+        .picQR {
+            position: relative;
+            background-image: url(https://i0.hdslb.com/bfs/article/50b40e4e291ea5bb1b13a5e5a8a2d31e1730526748.jpg);
+            background-size: 100% 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+        #qrcode {
+            height: 90%;
+            border-radius: 10px;
+            border: 3px #eee solid;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            z-index: 5;
+            position: absolute;
+        }
+        .picQR img {
+            display: flex;
+            margin-top: -1px;
+            margin-bottom: -1px;
+        }
+        @media screen and (min-width: 750px) {
+            .fullscreen, .picQR {
+                width: 750px;
+                margin: auto;
+            }
+        }
+    </style>
+    
+    
+    
+</head>
+<body class="">
+<div id="app">
+    <img class="fullscreen" src="https://archive.biliimg.com/bfs/archive/1b35ee23bc10182e43df2bf7df51a127b4cec1a1.jpg" alt="头图，如不显示，请使用系统浏览器打开">
+    <div class="picQR">
+        <img src="https://archive.biliimg.com/bfs/archive/ae0f516b2dfccd83db19ae71fdc92c6558e9b89b.jpg" class="fullscreen" alt="">
+        <img id="qrcode" src="" alt="二维码">
+    </div>
+    <img src="https://archive.biliimg.com/bfs/archive/d4e1415f783cd8ce87e035661e57752f1f365c63.jpg" class="fullscreen" alt="">
+    <img src="https://archive.biliimg.com/bfs/archive/fe7dcefec76f0c75d8654d5242a0b39d25726465.jpg" class="fullscreen" alt="">
+</div>
+
+<script>
+
+    const 二维码图片列表 = [
+
+        'https://archive.biliimg.com/bfs/archive/830b37b5ad6853bc152f51e63f7ae83dc9f2a5e3.png',
+
+
+    ]
+    const 二维码图片 = 二维码图片列表[Math.floor(Math.random() * 二维码图片列表.length)]
+    document.querySelector('#qrcode').src = 二维码图片
+
+    const app = new Vue({
+        el: '#app',
+        data: {},
+        methods: {
+            receive() {
+                vant.Dialog({ message: '请完成下列联动任务后按流程领取', className: 'alert', confirmButtonText: '确定' })
+            },
+        },
+        mounted(){
+
+        }
+    });
+</script>
+<script>
+    // 解决B站图床问题
+    const isSafari = /Safari/.test(navigator.userAgent);
+    const isIPhone = /iPhone/.test(navigator.userAgent);
+    if (isIPhone && !isSafari) {
+        document.querySelectorAll('img').forEach((img) => {
+            const isBiliImg = ['hdslb.com', 'biliimg.com'].some((domain) => img.src.includes(domain));
+            if (isBiliImg) {
+                img.src = 'https://images.weserv.nl/?url='+img.src;
+            }
+        });
+    }
+</script>
+<link href="https://cdn.bootcdn.net/ajax/libs/vant/2.12.9/index.min.css" rel="stylesheet">
+<script src="https://cdn.bootcdn.net/ajax/libs/vant/2.12.9/vant.min.js"></script>
+
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3ITJaU2iNJ0NCYRh",ck:"3ITJaU2iNJ0NCYRh"})</script>
+</body>
+</html>
+
+
